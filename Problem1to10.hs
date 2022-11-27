@@ -7,5 +7,5 @@ myButLast :: [a] -> a
 myButLast xs = last (init xs)
 
 
-elementAt :: [a] -> Int -> [a]
-elementAt xs n = take n xs
+elementAt :: [a] -> Int -> a
+elementAt xs n = last (take n xs)
