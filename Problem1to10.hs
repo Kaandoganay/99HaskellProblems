@@ -16,3 +16,8 @@ myLength = length
 myReverse :: [a] -> [a]
 myReverse = reverse
 
+
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome xs = if xs == reverse xs then True else False
+
+
