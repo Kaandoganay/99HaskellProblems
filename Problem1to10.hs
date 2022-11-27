@@ -13,4 +13,6 @@ elementAt xs n = last (take n xs)
 myLength :: [a] -> Int
 myLength = length
 
+myReverse :: [a] -> [a]
+myReverse = reverse
 
