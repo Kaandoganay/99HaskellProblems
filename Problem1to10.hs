@@ -20,17 +20,8 @@ myReverse = reverse
 
 --Problem6--
 isPalindrome :: Eq a => [a] -> Bool
-isPalindrome xs = if xs == reverse xs then True else False
+isPalindrome xs = xs == reverse xs
 
---Problem7--
 
-data NestedList a = Elem a | List [NestedList a] 
-
-flatten :: NestedList a -> [a]
-flatten (Elem a   )   = [a]
-flatten (List (x:xs)) = flatten x ++ flatten (List xs)
-flatten (List [])     = []
-
---Problem8--
 
 
