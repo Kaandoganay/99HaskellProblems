@@ -1,4 +1,6 @@
 --Problem1--
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Redundant if" #-}
 myLast :: [a] -> a
 myLast = last
 
@@ -16,12 +18,10 @@ myLength = length
 
 --Problem5--
 myReverse :: [a] -> [a]
-myReverse = reverse
+myReverse xs = reverse xs
 
 --Problem6--
 isPalindrome :: Eq a => [a] -> Bool
-isPalindrome xs = xs == reverse xs
+isPalindrome xs =if xs == reverse xs then True else False
 
-
-
-
+--Problem7 :  Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).--
