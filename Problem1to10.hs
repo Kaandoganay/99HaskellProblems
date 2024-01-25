@@ -1,6 +1,9 @@
---Problem1--
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Redundant if" #-}
+import Data.List ( group )
+
+
+--Problem1--
 myLast :: [a] -> a
 myLast = last
 
@@ -24,7 +27,7 @@ myReverse = reverse
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome xs =if xs == reverse xs then True else False
 
---Problem7 :  Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).--
+--Problem7--
 
 data NestedList a = Elem a | List [NestedList a]
 
@@ -44,3 +47,6 @@ pack [] = []
 pack (x:xs) = (x : takeWhile (==x) xs) : pack (dropWhile (==x) xs)
 
 --Problem10--
+
+encode :: Eq b => [b] -> [(Int, b)]
+encode xs = map (\x -> (length x,head x)) (group xs)
