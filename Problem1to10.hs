@@ -1,5 +1,5 @@
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-{-# HLINT ignore "Redundant if" #-}
+module Problem1to10 where
+
 import Data.List ( group )
 
 
@@ -25,7 +25,7 @@ myReverse = reverse
 
 --Problem6--
 isPalindrome :: Eq a => [a] -> Bool
-isPalindrome xs =if xs == reverse xs then True else False
+isPalindrome xs =xs == reverse xs
 
 --Problem7--
 
