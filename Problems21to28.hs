@@ -1,4 +1,4 @@
-module Problems21to30 where
+module Problems21to28 where
 
 --Problem21--
 insert :: a -> [a] -> Int -> [a]
