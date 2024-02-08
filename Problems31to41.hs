@@ -1,7 +1,13 @@
+import Control.Concurrent ()
 
 --Problem31--
-isprime :: Integer -> Bool
-isprime x = null [k | k<-[2..(x-1)], x `mod` k == 0]
+isqrt :: Int -> Int
+isqrt = floor . sqrt . fromIntegral
+
+isprime :: Int -> Bool
+isprime x |x <=1 = error "Value should be bigger than 1"
+          |null [k | k<-[2..(isqrt x)], x `mod` k == 0] = True
+          |otherwise = False
 
 --Problem32--
 myGCD :: Integer -> Integer -> Integer
@@ -17,9 +23,14 @@ coprime x y = myGCD x y == 1
 --Problem34--
 
 totient :: Integer -> Int
-totient x = length [k | k <- [1..(x-1)], coprime k x ]
+totient x | x<= 0  = error "Value should be positive"
+          |otherwise = length [k | k <- [1..(x-1)], coprime k x ]
 
 --Problem35--
 
-primefactors :: Integer -> [Integer]
-primefactors x = filter isprime [k | k<-[2..x], x `mod` k ==0 ]
+primefactors :: Int -> [Int]
+primefactors x |x <= 0 = error "Value should be positive"
+               |x ==1 = [1]
+               |otherwise = filter isprime [k | k<-[2..x], x `mod` k ==0 ]
+
+--Problem36--
